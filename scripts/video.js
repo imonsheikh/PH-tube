@@ -3,9 +3,8 @@
 //2-
 
 
-//Create loadCategories
+//Create loadCategories function 1
 const loadCatagories = () => {
-    // console.log('load categories created');
 
     //fetch the data
     fetch('https://openapi.programming-hero.com/api/phero-tube/categories')
@@ -15,9 +14,25 @@ const loadCatagories = () => {
     
 }
 
-//Create DisplayCategories
-const displayCategories = (data) => {
- console.log(data);
+
+//Create DisplayCategories function 2
+const displayCategories = (categories) => {
+//  console.log(categories);
+const categoriesContainer = document.getElementById('categories')
+
+
+categories.forEach( (item) => {
+    console.log(item);
+
+    //create a button
+    const button = document.createElement('button')
+    button.classList = "btn"
+    button.innerText = item.category
+
+    //add button to category container
+    categoriesContainer.append(button)
+    
+})
  
 }
 

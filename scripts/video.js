@@ -113,7 +113,7 @@ if(videos.length === 0){
   videoContainer.classList.remove('grid')
   videoContainer.innerHTML = `
   <div class ="min-h-[300px] flex flex-col gap-5 justify-center items-center border">
-  <img src="../assets/Icon.png" alt="" />
+  <img src="assets/Icon.png" alt="" />
   <h2 class ="text-center font-bold text-xl text-slate-600">
   No content here in this category
   </h2>

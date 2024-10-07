@@ -55,9 +55,24 @@ const loadCategoriesVideos = (id) => {
 
 //Create display videos function 3
 const displayVideos = (videos) => {
-//    console.log(videos);
+   console.log(videos);
 const videoContainer = document.getElementById('videos')
 videoContainer.innerHTML = ""
+
+if(videos.length === 0){
+  videoContainer.classList.remove('grid')
+  videoContainer.innerHTML = `
+  <div class ="min-h-[300px] flex flex-col gap-5 justify-center items-center border">
+  <img src="../assets/Icon.png" alt="" />
+  <h2 class ="text-center font-bold text-xl text-slate-600">
+  No content here in this category
+  </h2>
+  </div>
+  `
+  return
+}else{
+  videoContainer.classList.add('grid')
+}
 
 videos.forEach(video => {
 // console.log(video);
@@ -113,7 +128,7 @@ const displayCategories = (categories) => {
 const categoriesContainer = document.getElementById('categories')
 
 categories.forEach( (item) => {
-    console.log(item);
+    // console.log(item);
 
     //create a button
     const buttonContainer = document.createElement('div')
